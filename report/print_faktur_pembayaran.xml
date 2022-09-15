@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_pembayaran_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+            <!-- <t t-call="report.external_layout"> -->
+            <div class="page">
+            <h2><b>FAKTUR PEMBAYARAN INTERNAL</b></h2>
+                <t t-foreach="docs" t-as="d">
+                    <div class="row>">
+                        <div class="col-4">ID PEMBAYARAN :</div>
+                        <div class="col-8"><span t.field="d.id_pembayaran"/></div>
+                        </div>
+                    <div class="row>">
+                        <div class="col-4">Nama Pelanggan :</div>
+                        <div class="col-8"><span t.field="d.nama_pembayaran"/></div>
+                    </div>
+                    <div class="row>">
+                        <div class="col-4">Tanggal :</div>
+                        <div class="col-8"><span t.field="d.tgl_bayar"/></div>
+                    </div>
+                    <div class="row">
+                        <t t-foreach="d.detailpembayaran_ids" t-as="ds">
+                            <div class="col-4"><span t-field="ds.pembayaran_id.name"/></div>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+    </template>
+</odoo>

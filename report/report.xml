@@ -1,0 +1,22 @@
+<odoo>
+    <record id="report_pelanggan_xlsx" model="ir.actions.report">
+        <field name="name">Pelanggan Excel</field>
+        <field name="model">farhanfutsal.pelanggan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">farhanfutsal.report_pelanggan_xlsx</field>
+        <field name="report_file">farhanfutsal.report_pelanggan_xlsx</field>
+        <field name="binding_model_id" ref="model_farhanfutsal_pelanggan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_pembayaran_pdf" model="ir.actions.report">
+        <field name="name">Faktur PDF</field>
+        <field name="model">farhanfutsal.pembayaran</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">farhanfutsal.report_pembayaran_pdf</field>
+        <field name="report_file">farhanfutsal.report_pembayaran_pdf</field>
+        <field name="binding_model_id" ref="model_farhanfutsal_pembayaran"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

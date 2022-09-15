@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- farhanfutsal.sewalapangan tree view -->
+    <record id="farhanfutsal_sewalapangan_view_tree" model="ir.ui.view">
+        <field name="name">farhanfutsal.sewalapangan.view.tree</field>
+        <field name="model">farhanfutsal.sewalapangan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="lapangan_id"/>
+                <field name="kode_lap"/>
+                <field name="tgl_booking"/>
+                <field name="dp"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- farhanfutsal.sewalapangan form view -->
+    <record id="farhanfutsal_sewalapangan_view_form" model="ir.ui.view">
+        <field name="name">farhanfutsal.sewalapangan.view.form</field>
+        <field name="model">farhanfutsal.sewalapangan</field>
+        <field name="arch" type="xml">
+            <form string="sewa lapangan">
+                <sheet>
+                    <group name="name" string="Nama Lapangan">
+                    <field name="lapangan_id"/>
+                    <field name="kode_lap"/>
+                    </group>
+                    <group name="booking" string="Letak Booking">
+                        <field name="tgl_booking"/>
+                        <field name="dp"/>
+                    </group>
+                    <group name="pelanggan" string="Pelanggan">
+                    <field name="pelanggan_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- farhanfutsal.sewalapangan action window -->
+    <record id="farhanfutsal_sewalapangan_action" model="ir.actions.act_window">
+        <field name="name">Sewa Lapangan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">farhanfutsal.sewalapangan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="farhanfutsal_sewalapangan_menu_act" 
+                name="Sewa Lapangan" 
+                parent="farhanfutsal_lapanganfutsal_menu_categ" 
+                action="farhanfutsal_sewalapangan_action" 
+                sequence="20"/>
+
+</odoo>

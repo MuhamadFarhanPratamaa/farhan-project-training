@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- addlapanganform view -->
+    <record id="add_lapangan_wizzard_view_form" model="ir.ui.view">
+        <field name="name">Lapangan</field>
+        <field name="model">farhanfutsal.addlapangan</field>
+        <field name="arch" type="xml">
+            <form string="Form Lapangan">
+                    <group>
+                        <field name="lapangan_id"/>
+                        <field name="kode_lap"/>
+                        <field name="biaya_sewa"/>
+                    </group>
+                    <footer>
+                        <button name="button_lapangan" type="object" string="Input Lapangan" class="btn btn-warning"/>
+                        <button string="Cancel" special="cancel" class="btn btn-danger"/>
+                    </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="add_lapangan_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Lapangan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">farhanfutsal.addlapangan</field> 
+        <field name="view_mode">form</field>
+        <field name="view_id" ref = "add_lapangan_wizzard_view_form"/>
+        <field name="target">new</field>
+    </record>
+    
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="add_lapangan_menu_act_wizzard" 
+                name="Input Lapangan" 
+                parent="farhanfutsal_menu_root" 
+                action="add_lapangan_action_wizzard" 
+                sequence="40"/>
+
+</odoo>

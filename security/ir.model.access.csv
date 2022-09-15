@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_farhanfutsal_lapangan,access.farhanfutsal.lapangan,model_farhanfutsal_lapangan,,1,1,1,1
+access_farhanfutsal_sewalapangan,access.farhanfutsal.sewalapangan,model_farhanfutsal_sewalapangan,,1,1,1,1
+access_farhanfutsal_pelanggan,access.farhanfutsal.pelanggan,model_farhanfutsal_pelanggan,,1,1,1,1
+access_farhanfutsal_pembayaran,access.farhanfutsal.pembayaran,model_farhanfutsal_pembayaran,,1,1,1,1
+access_farhanfutsal_detailpembayaran,access.farhanfutsal.detailpembayaran,model_farhanfutsal_detailpembayaran,,1,1,1,1
+access_farhanfutsal_addlapangan,access.farhanfutsal.addlapangan,model_farhanfutsal_addlapangan,,1,1,1,1

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- farhanfutsal.lapangan tree view -->
+    <record id="farhanfutsal_lapangan_view_tree" model="ir.ui.view">
+        <field name="name">Lapangan Futsal</field>
+        <field name="model">farhanfutsal.lapangan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="kode_lap"/>
+                <field name="biaya_sewa"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- farhanfutsal.lapangan form view -->
+    <record id="farhanfutsal_lapangan_view_form" model="ir.ui.view">
+        <field name="name">Form Lapangan Futsal</field>
+        <field name="model">farhanfutsal.lapangan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="kode_lap"/>
+                        <field name="biaya_sewa"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- farhanfutsal.lapangan_ action window -->
+    <record id="farhanfutsal_lapangan_action" model="ir.actions.act_window">
+        <field name="name">Lapangan Futsal</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">farhanfutsal.lapangan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="farhanfutsal_lapangan_menu_act" 
+                name="Lapangan Futsal" 
+                parent="farhanfutsal_lapanganfutsal_menu_categ"
+                action="farhanfutsal_lapangan_action" 
+                sequence="10"/>
+
+</odoo>

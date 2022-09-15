@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- farhanfutsal.pelanggan tree view -->
+    <record id="farhanfutsal_pelanggan_view_tree" model="ir.ui.view">
+        <field name="name">Pelanggan</field>
+        <field name="model">farhanfutsal.pelanggan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="alamat"/>
+                <field name="no_telp"/>
+                <field name="tgl_daftar"/>
+                <field name="sewalapangan_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- farhanfutsal.pelanggan form view -->
+    <record id="farhanfutsal_pelanggan_view_form" model="ir.ui.view">
+        <field name="name">Pelanggan</field>
+        <field name="model">farhanfutsal.pelanggan</field>
+        <field name="arch" type="xml">
+            <form string="pelanggan">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="alamat"/>
+                        <field name="no_telp"/>
+                        <field name="tgl_daftar"/>
+                    </group>
+                    <group name="sewalapangan" string="Sewa Lapangan">
+                        <field name="sewalapangan_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- farhanfutsal.pelanggan action window -->
+    <record id="farhanfutsal_pelanggan_action" model="ir.actions.act_window">
+        <field name="name">Pelanggan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">farhanfutsal.pelanggan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="farhanfutsal_pelanggan_menu_act" 
+                name="Pelanggan" 
+                parent="farhanfutsal_menu_root" 
+                action="farhanfutsal_pelanggan_action" 
+                sequence="10"/>
+
+</odoo>

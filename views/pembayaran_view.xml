@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- farhanfutsal.pembayaran tree view -->
+    <record id="farhanfutsal_pembayaran_view_tree" model="ir.ui.view">
+        <field name="name">Pembayaran</field>
+        <field name="model">farhanfutsal.pembayaran</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id_pembayaran"/>
+                <field name="name"/>
+                <field name="tgl_bayar"/>
+                <field name="total_bayar"/>  
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- farhanfutsal.pembayaran form view -->
+    <record id="farhanfutsal_pembayaran_view_form" model="ir.ui.view">
+        <field name="name">Pembayaran</field>
+        <field name="model">farhanfutsal.pembayaran</field>
+        <field name="arch" type="xml">
+            <form string="Pembayaran">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft"/>
+                    <button name="action_done" type="object" string="Done" class="btn btn-primary" states="confirm"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn btn-warning" states="confirm" confirm="Anda yakin meng-cancel Quotation ini?"/>
+                    <button name="action_draft" type="object" string="Kembali ke Draft" class="btn btn-danger" states="cancelled" confirm="Anda yakin untuk mengedit Quotation ini?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
+                <sheet>
+                    <!-- <group>
+                        <field name="name" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="id_pembayaran" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="tgl_bayar" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="total_bayar" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                    </group> -->
+                    <group>
+                        <field name="id_pembayaran"/>
+                        <field name="name"/>
+                        <field name="tgl_bayar"/>
+                        <field name="total_bayar"/>
+                    </group>
+                    <group name="detail_pembayaran" string="Details Pembayaran">
+                        <field name="detailpembayaran_ids">
+                            <tree editable="bottom">
+                                <field name="lapangan_id"/>
+                                <field name="harga_sewa"/>
+                                <field name="subtotal" sum='Total'/>
+
+                            </tree>    
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- farhanfutsal.pembayaran action window -->
+    <record id="farhanfutsal_pembayaran_action" model="ir.actions.act_window">
+        <field name="name">Pembayaran</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">farhanfutsal.pembayaran</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="farhanfutsal_pembayaran_menu_act" 
+                name="Transaksi" 
+                parent="farhanfutsal_menu_root" 
+                action="farhanfutsal_pembayaran_action" 
+                sequence="30"/>
+
+</odoo>
